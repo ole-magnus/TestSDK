@@ -18,6 +18,11 @@ check_tag() {
         exit 0
     else
         echo "Building and deploying tag $TRAVIS_TAG"
+        echo "deployed file with tag $TRAVIS_TAG" > deploy.txt
+        git checkout -b docs-update
+        git add --all
+        git commit -m "Added deploy tag"
+        git push origin docs-update
     fi
 }
 
