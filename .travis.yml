@@ -4,8 +4,7 @@ script:
 before_deploy: echo 'deployed file with tag $TRAVIS_TAG' > deploy.md
 deploy:
   provider: pages
-  api_key:
-    secure: SDGi0c+YQqbGYLHQKKMxBRhTTJ0rIkR8bP+ZEqfRYAURSp7au56XglhRz8U6hLmEsbyeBw3wuP8DsO0rZAYM6tyoewtwZOCyKyhSIRnNU81lpL4NSbpKi1AC5wF2zBWBu1gXqKHoZiY3kL08VtqKF8brBx89JeHuTH2zF6zeiAhyvTtALlpyYpa7MqDStQDFsRcdM+0ULQEqJyLzSlRgfe/9NF26LHigkqeGvEeeOdxJvnp0T2nch3ZVIAIsYnsk3yRltyInxvLAl10GLdPgITKHy/tTBIHXjPfQRV/F67WvZChcV+vQBulSSo/li8UKFmhqVcKlS06NCvgXyWBThwQy3m0gB8GxT5gbhdI4U+EoyTCIrSf89M7Q5UPAMKjyDjden0xT/NM/w17cl7z2OXeAjVN+gBdvVzCr+ArLMb+trs2FHBox3iLbR9n/q3PungGHVyAclxymkoiozfuZ+B7S09PpMNwirBi100yjzCMp29WlXZpNMT5CWa9oYKsE7lTprYTmhH59LluvIcgZ9n9RRhyqGof4DK8IWYqRawig+/kwBX+6RviEPeze24dNfprR3yeBU5ZfgrzzNh0UiMJp0nCmAVJysKRcx0LGOFsaJoKIFgquTwRIAsJ6A38N25nfGGlXiSh5RDJRJypqjDDkOg+N2kt2NxseDCbFIk0=
+  api_key: $GITHUB_API_KEY 
   skip_cleanup: true
   overwrite: true
   on:
