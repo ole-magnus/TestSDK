@@ -7,6 +7,7 @@ deploy:
   api_key:
     secure: EwAlO3yNelBQPOKrDDFvAUmQHEdTD4tj6JLzMGVJulmbOottKiihlKDqkxpN4D+0CJOURbB8dNhR6VYLCERUGTcYPxdQt3M2c0a6e5rGmX52J3SdEp1gtB4eFUsdhDns/8GrsRshP73j40/vgKBldCmQ290H0STn9I9q35lKJGb4Ogjq07NtH+8RvKJJuFD6THI9vlkH6bAB+iFEeCHrC0FxFlo1hg4sFVKUSf87MXUAtPdLxu/cOccgQd2pJa+zaaecOLXdMURHgilwxoBVDrmFBaHFnbeJmXs93IfyTpIXA3YAgffxPSDrbKO4EpjfXe/opTQz+O/QX0bhCEbDOiSWat02kKKJQ8u0tGv7De8+gvAbu0FHt4bvrmIn2baBb1en2ercbzkrz9BWCBqvnytsW2gxqCp0ejt1DtG7UCH8wbHfxsXk2dr5J/V5rlxu69Tuu8CdJH1KXQhNPVywoq0aawr1ijggTqnXoetpm8piykgAbKIRWTRXUNJkeHt9hSOK2r5qwj9aiVW2KIKgayO9bgKZp1OliEuUMoZxt2+N9Xtem+kSSogDRUS0hhSGN+W/HUjoBsEMeLhnypWNPAwilc1+TOg+4ym/vqfXXgzl2E0P3NvIZWvGDXJbAnzp/N+WC/h0g3YLGjOnCGRyuiOa1SGog4b+BSyyY/ft5K0=
   file: deploy.txt
+  skip_cleanup: true
   on:
     tags: true
     branch: master
