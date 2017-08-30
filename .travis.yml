@@ -1,15 +1,12 @@
-# references:
-# * http://www.objc.io/issue-6/travis-ci.html
-# * https://github.com/supermarin/xcpretty#usage
-
 osx_image: xcode7.3
 language: objective-c
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
-script:
-    #- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TestSDK.xcworkspace -scheme TestSDK-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
-    #- pod lib lint
-    - ./git-tag-script.sh
+script: 
+before_deply: echo 'deployed file with tag $TRAVIS_TAG' > deploy.txt
+deploy:
+  provider: releases
+  api_key:
+    secure: EwAlO3yNelBQPOKrDDFvAUmQHEdTD4tj6JLzMGVJulmbOottKiihlKDqkxpN4D+0CJOURbB8dNhR6VYLCERUGTcYPxdQt3M2c0a6e5rGmX52J3SdEp1gtB4eFUsdhDns/8GrsRshP73j40/vgKBldCmQ290H0STn9I9q35lKJGb4Ogjq07NtH+8RvKJJuFD6THI9vlkH6bAB+iFEeCHrC0FxFlo1hg4sFVKUSf87MXUAtPdLxu/cOccgQd2pJa+zaaecOLXdMURHgilwxoBVDrmFBaHFnbeJmXs93IfyTpIXA3YAgffxPSDrbKO4EpjfXe/opTQz+O/QX0bhCEbDOiSWat02kKKJQ8u0tGv7De8+gvAbu0FHt4bvrmIn2baBb1en2ercbzkrz9BWCBqvnytsW2gxqCp0ejt1DtG7UCH8wbHfxsXk2dr5J/V5rlxu69Tuu8CdJH1KXQhNPVywoq0aawr1ijggTqnXoetpm8piykgAbKIRWTRXUNJkeHt9hSOK2r5qwj9aiVW2KIKgayO9bgKZp1OliEuUMoZxt2+N9Xtem+kSSogDRUS0hhSGN+W/HUjoBsEMeLhnypWNPAwilc1+TOg+4ym/vqfXXgzl2E0P3NvIZWvGDXJbAnzp/N+WC/h0g3YLGjOnCGRyuiOa1SGog4b+BSyyY/ft5K0=
+  file: deploy.txt
+  on:
+    tags: true
+    branch: master
