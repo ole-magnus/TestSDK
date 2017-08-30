@@ -1,0 +1,22 @@
+{
+  "name": "TestSDK",
+  "version": "0.1.0",
+  "summary": "A short description of TestSDK.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/olemaga/TestSDK",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "olemaga": "ole.magnus.aker@schibsted.com"
+  },
+  "source": {
+    "git": "https://github.com/olemaga/TestSDK.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TestSDK/Classes/**/*"
+}
