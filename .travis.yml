@@ -1,13 +1,14 @@
 osx_image: xcode7.3
 language: objective-c
 script: 
-before_deploy: echo 'deployed file with tag $TRAVIS_TAG' > deploy.txt
+before_deploy: echo 'deployed file with tag $TRAVIS_TAG' > deploy.md
 deploy:
-  provider: releases
+  provider: pages
   api_key:
-    secure: EwAlO3yNelBQPOKrDDFvAUmQHEdTD4tj6JLzMGVJulmbOottKiihlKDqkxpN4D+0CJOURbB8dNhR6VYLCERUGTcYPxdQt3M2c0a6e5rGmX52J3SdEp1gtB4eFUsdhDns/8GrsRshP73j40/vgKBldCmQ290H0STn9I9q35lKJGb4Ogjq07NtH+8RvKJJuFD6THI9vlkH6bAB+iFEeCHrC0FxFlo1hg4sFVKUSf87MXUAtPdLxu/cOccgQd2pJa+zaaecOLXdMURHgilwxoBVDrmFBaHFnbeJmXs93IfyTpIXA3YAgffxPSDrbKO4EpjfXe/opTQz+O/QX0bhCEbDOiSWat02kKKJQ8u0tGv7De8+gvAbu0FHt4bvrmIn2baBb1en2ercbzkrz9BWCBqvnytsW2gxqCp0ejt1DtG7UCH8wbHfxsXk2dr5J/V5rlxu69Tuu8CdJH1KXQhNPVywoq0aawr1ijggTqnXoetpm8piykgAbKIRWTRXUNJkeHt9hSOK2r5qwj9aiVW2KIKgayO9bgKZp1OliEuUMoZxt2+N9Xtem+kSSogDRUS0hhSGN+W/HUjoBsEMeLhnypWNPAwilc1+TOg+4ym/vqfXXgzl2E0P3NvIZWvGDXJbAnzp/N+WC/h0g3YLGjOnCGRyuiOa1SGog4b+BSyyY/ft5K0=
-  file: deploy.txt
+    secure: SDGi0c+YQqbGYLHQKKMxBRhTTJ0rIkR8bP+ZEqfRYAURSp7au56XglhRz8U6hLmEsbyeBw3wuP8DsO0rZAYM6tyoewtwZOCyKyhSIRnNU81lpL4NSbpKi1AC5wF2zBWBu1gXqKHoZiY3kL08VtqKF8brBx89JeHuTH2zF6zeiAhyvTtALlpyYpa7MqDStQDFsRcdM+0ULQEqJyLzSlRgfe/9NF26LHigkqeGvEeeOdxJvnp0T2nch3ZVIAIsYnsk3yRltyInxvLAl10GLdPgITKHy/tTBIHXjPfQRV/F67WvZChcV+vQBulSSo/li8UKFmhqVcKlS06NCvgXyWBThwQy3m0gB8GxT5gbhdI4U+EoyTCIrSf89M7Q5UPAMKjyDjden0xT/NM/w17cl7z2OXeAjVN+gBdvVzCr+ArLMb+trs2FHBox3iLbR9n/q3PungGHVyAclxymkoiozfuZ+B7S09PpMNwirBi100yjzCMp29WlXZpNMT5CWa9oYKsE7lTprYTmhH59LluvIcgZ9n9RRhyqGof4DK8IWYqRawig+/kwBX+6RviEPeze24dNfprR3yeBU5ZfgrzzNh0UiMJp0nCmAVJysKRcx0LGOFsaJoKIFgquTwRIAsJ6A38N25nfGGlXiSh5RDJRJypqjDDkOg+N2kt2NxseDCbFIk0=
   skip_cleanup: true
+  overwrite: true
   on:
     tags: true
     branch: master
+    repo: olemaga/TestSDK
