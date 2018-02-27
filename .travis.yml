@@ -1,13 +1,14 @@
 osx_image: xcode7.3
 language: objective-c
 script: 
-before_deploy: echo 'deployed file with tag $TRAVIS_TAG' > deploy.md
+before_deploy: 
+  - . ./utils.sh && if is_ole_magnus; then export OLE-MAGNUS=YES; else export OLE-MAGNUS=NO; fi 
 deploy:
   provider: pages
   github_token: $GITHUB_API_KEY 
   skip_cleanup: true
   overwrite: true
   on:
-    tags: true
     branch: master
+    condition: $OLE-MAGNUS = YES
     repo: olemaga/TestSDK
