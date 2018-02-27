@@ -10,5 +10,5 @@ deploy:
   overwrite: true
   on:
     branch: master
-    condition: $OLE-MAGNUS = YES
+    condition: $IS_OLE_MAGNUS = YES
     repo: olemaga/TestSDK
