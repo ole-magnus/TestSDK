@@ -2,6 +2,7 @@ osx_image: xcode7.3
 language: objective-c
 script: 
 before_deploy: 
+  - set -x
   - . ./utils.sh && if is_ole_magnus; then export OLE-MAGNUS=YES; else export OLE-MAGNUS=NO; fi 
 deploy:
   provider: pages
