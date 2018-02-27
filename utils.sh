@@ -10,5 +10,4 @@ is_ole_magnus() {
   fi
 }
 
-export IS_OLE_MAGNUS=$(is_ole_magnus)
-
+is_ole_magnus
