@@ -7,6 +7,6 @@ deploy:
   skip_cleanup: true
   overwrite: true
   on:
-    condition: "$(sh utils.sh)" == "YES"
+    condition: $(sh utils.sh) == "YES"
     branch: master
     repo: olemaga/TestSDK
