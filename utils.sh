@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-last_author="$(git log -1 --pretty=format:'%an')"
-echo "last author is: $last_author"
-if [ "$last_author" == "olemaga" ]; then
-  export IS_OLE_MAGNUS=YES 
-else
-  export IS_OLE_MAGNUS=NO
-fi
+
+is_ole_magnus() {
+  local last_author="$(git log -1 --pretty=format:'%an')"
+  if [ "$last_author" == "olemaga" ]; then
+    echo "YES" 
+  else
+    echo "NO"
+  fi
+}
+
+export IS_OLE_MAGNUS=$(is_ole_magnus)
 

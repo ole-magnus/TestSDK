@@ -2,8 +2,6 @@ osx_image: xcode7.3
 language: objective-c
 script: 
 before_deploy: 
-  - echo "Before deploy"
-  - export IS_OLE_MAGNUS=YES
   - set -x && source utils.sh
 deploy:
   provider: pages
@@ -12,5 +10,4 @@ deploy:
   overwrite: true
   on:
     branch: master
-    condition: $IS_OLE_MAGNUS = YES
     repo: olemaga/TestSDK
